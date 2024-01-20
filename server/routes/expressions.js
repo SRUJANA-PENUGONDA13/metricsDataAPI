@@ -22,12 +22,12 @@ router.get('/getMetricExpressions', async (req, res) => {
 // PUT update metric expression by ID
 router.put('/updateMetricExpression/:id', async (req, res) => {
   const { id } = req.params
-  const { metricExpression } = req.body
-
+  const { metricexpression } = req.body
+  
   try {
     const queryResult = await db.query(
-      'UPDATE public.metricsdetails SET metricExpression = $1 WHERE id = $2 RETURNING id, metricExpression',
-      [metricExpression, id],
+      'UPDATE public.metricsdetails SET metricexpression = $1 WHERE id = $2 RETURNING id, metricname, metricexpression',
+      [metricexpression, id],
     )
     const updatedMetricDetails = queryResult.rows[0]
 

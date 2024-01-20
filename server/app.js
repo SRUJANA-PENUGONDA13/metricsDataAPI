@@ -9,17 +9,17 @@ const PORT = process.env.PORT || 3000
 
 app.use(bodyParser.json())
 
-// Connect to PostgreSQL database
-db.connect((err) => {
-  if (err) {
-    console.error('Error connecting to PostgreSQL:', err)
-    return
-  }
-  console.log('Connected to PostgreSQL database')
-})
+// // Connect to PostgreSQL database
+// db.connect((err) => {
+//   if (err) {
+//     console.error('Error connecting to PostgreSQL:', err)
+//     return
+//   }
+//   console.log('Connected to PostgreSQL database')
+// })
 
 // Use expressions router
-app.use('/api', expressionsRouter)
+app.use('/', expressionsRouter)
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)

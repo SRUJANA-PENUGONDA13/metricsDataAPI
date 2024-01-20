@@ -1,7 +1,7 @@
 // routes/expressions.js
 const express = require('express')
 const router = express.Router()
-const db = require('../models/db')
+const { db } = require('../models/db')
 
 // GET all metric expressions
 router.get('/getMetricExpressions', async (req, res) => {
